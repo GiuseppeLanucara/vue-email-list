@@ -5,7 +5,7 @@
 // Far comparire gli indirizzi email solamente quando sono stati tutti generati.
 
 
-
+const {createApp} = Vue;
 
 createApp({
     data() {
@@ -17,10 +17,14 @@ createApp({
       
     },
     methods: {
-        getEmails: function() {
-            axios
+        getEmail() {
+          axios
             .get("https://flynn.boolean.careers/exercises/api/random/mail")
-        }
-    }
-        
-  }).mount("#app");
+            .then(this.resp.data.response => {
+              console.log("dati");
+              
+            });
+        },
+      },
+    }).mount("#app");
+    
