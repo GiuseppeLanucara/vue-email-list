@@ -15,10 +15,11 @@
         <div id="app">
 
 
-            <h1>Lista email API</h1>
+            <button @click="getEmail()">Verifica</button>
 
             <ul>
-                <li></li>
+              <li v-if="listaMail.length >= 10" v-for="(mail, index) in listaMail">{{ listaMail[index] }}</li>
+              <li v-else="">{{ scaricamento }}</li>
             </ul>
 
 

@@ -10,20 +10,25 @@ const {createApp} = Vue;
 createApp({
     data() {
       return {
-        
-      };
-    },
-    created() {
-      
+        listaMail: [],
+        scaricamento: ""
+      }
     },
     methods: {
+
         getEmail() {
-          axios
+
+            if(this.listaMail.lenght !== 0) this.listaMail = [];
+            this.scaricamento = "Caricamento in corso...";
+            for(let i = 0; i < 10; i++) {
+                axios
             .get("https://flynn.boolean.careers/exercises/api/random/mail")
             .then((resp) => {
-              console.log("dati");
+              this.listaMail.push(resp.data.response);
              
             });
+            }
+          
         },
       },
     }).mount("#app");
