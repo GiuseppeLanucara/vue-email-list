@@ -8,13 +8,16 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.1.3/axios.min.js"></script>
     <!-- Link VUE -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.2.41/vue.global.min.js"></script>
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="css/style.css">
     <title>Email-List</title>
 </head>
 <body>
     
         <div id="app">
 
-
+            <h1>Generatore di Email Casuali</h1>
+            <p>Premere il bottone per generare 10 email casuali</p>
             <button @click="getEmail()">Verifica</button>
 
             <ul>
@@ -22,13 +25,7 @@
               <li v-else="">{{ scaricamento }}</li>
             </ul>
 
-
-
-
         </div>
-
-
-
 
     <script src="js/script.js"></script>
 </body>
